@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.mon2zero"
+    namespace "com.unibot"
     defaultConfig {
-        applicationId "com.mon2zero"
+        applicationId "com.unibot"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

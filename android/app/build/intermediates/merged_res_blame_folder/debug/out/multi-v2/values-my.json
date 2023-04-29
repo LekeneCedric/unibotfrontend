@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mon2zero.app-mergeDebugResources-27:/values-my/values-my.xml",
+            "outputFile": "com.unibot.app-mergeDebugResources-27:/values-my/values-my.xml",
             "map": [
                 {
                     "source": "/home/code237/.gradle/caches/transforms-3/be9a285d7d94d789380b4b7ef5365ae2/transformed/appcompat-1.4.1/res/values-my/values-my.xml",

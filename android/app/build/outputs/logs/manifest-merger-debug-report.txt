@@ -11,6 +11,7 @@ MERGED from [com.facebook.flipper:flipper:0.125.0] /home/code237/.gradle/caches/
 MERGED from [:react-native-i18n] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-i18n/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-svg] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-android:0.71.7] /home/code237/.gradle/caches/transforms-3/84bec54958abf3a45efcfc6e26585866/transformed/jetified-react-android-0.71.7-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/code237/.gradle/caches/transforms-3/091aa78edfb1f2d80073a0612085f398/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.react:hermes-android:0.71.7] /home/code237/.gradle/caches/transforms-3/6df4b61676b98e2abf6f727efdf7f5ae/transformed/jetified-hermes-android-0.71.7-debug/AndroidManifest.xml:2:1-9:12
@@ -141,7 +142,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/code2
 	android:name
 		ADDED from /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:6:7-38
 		ADDED from /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:6:7-38
-activity#com.mon2zero.MainActivity
+activity#com.unibot.MainActivity
 ADDED from /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:12:7-23:18
 	android:label
 		ADDED from /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:14:9-41
@@ -181,6 +182,8 @@ MERGED from [:react-native-safe-area-context] /home/code237/Documents/Soutenance
 MERGED from [:react-native-safe-area-context] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.7] /home/code237/.gradle/caches/transforms-3/84bec54958abf3a45efcfc6e26585866/transformed/jetified-react-android-0.71.7-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.7] /home/code237/.gradle/caches/transforms-3/84bec54958abf3a45efcfc6e26585866/transformed/jetified-react-android-0.71.7-debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/code237/.gradle/caches/transforms-3/091aa78edfb1f2d80073a0612085f398/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44

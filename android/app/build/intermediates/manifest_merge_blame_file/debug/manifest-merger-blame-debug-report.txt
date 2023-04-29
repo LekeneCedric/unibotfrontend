@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.mon2zero"
+3    package="com.unibot"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -20,7 +20,7 @@
 14
 15    <application
 15-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:5:5-24:19
-16        android:name="com.mon2zero.MainApplication"
+16        android:name="com.unibot.MainApplication"
 16-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:6:7-38
 17        android:allowBackup="false"
 17-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:10:7-34
@@ -45,7 +45,7 @@
 27-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/AndroidManifest.xml:11:84-108
 28        <activity
 28-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:12:7-23:18
-29            android:name="com.mon2zero.MainActivity"
+29            android:name="com.unibot.MainActivity"
 29-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:13:9-37
 30            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
 30-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:15:9-118
@@ -73,7 +73,7 @@
 42-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
 43            android:name="androidx.startup.InitializationProvider"
 43-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-44            android:authorities="com.mon2zero.androidx-startup"
+44            android:authorities="com.unibot.androidx-startup"
 44-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
 45            android:exported="false" >
 45-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37

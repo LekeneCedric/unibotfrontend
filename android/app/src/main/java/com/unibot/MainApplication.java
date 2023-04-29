@@ -1,4 +1,4 @@
-package com.mon2zero;
+package com.unibot;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
