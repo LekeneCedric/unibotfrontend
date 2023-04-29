@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,5 +51,26 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Ysabeau-Black.ttf</string>
+		<string>Ysabeau-BlackItalic.ttf</string>
+		<string>Ysabeau-Bold.ttf</string>
+		<string>Ysabeau-BoldItalic.ttf</string>
+		<string>Ysabeau-ExtraBold.ttf</string>
+		<string>Ysabeau-ExtraBoldItalic.ttf</string>
+		<string>Ysabeau-ExtraLight.ttf</string>
+		<string>Ysabeau-ExtraLightItalic.ttf</string>
+		<string>Ysabeau-Italic.ttf</string>
+		<string>Ysabeau-Light.ttf</string>
+		<string>Ysabeau-LightItalic.ttf</string>
+		<string>Ysabeau-Medium.ttf</string>
+		<string>Ysabeau-MediumItalic.ttf</string>
+		<string>Ysabeau-Regular.ttf</string>
+		<string>Ysabeau-SemiBold.ttf</string>
+		<string>Ysabeau-SemiBoldItalic.ttf</string>
+		<string>Ysabeau-Thin.ttf</string>
+		<string>Ysabeau-ThinItalic.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -1,0 +1,77 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-Black.ttf",
+      "sha1": "d5d44e2a303c804a13d7489b83a24e81a03915b2"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-BlackItalic.ttf",
+      "sha1": "2616eb15ce8474fedf4b94a7071bdaadc6f7b342"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-Bold.ttf",
+      "sha1": "57237e3191e5697bad6ff522e6a7ceb2680bfa83"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-BoldItalic.ttf",
+      "sha1": "dc94a0b1d6fd729ff75b6553d5dd1782dbee31e9"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-ExtraBold.ttf",
+      "sha1": "c054ad508c540e7afa9c19d7d6d28e4890db89bd"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-ExtraBoldItalic.ttf",
+      "sha1": "3ebc1bd8c7eeb101f64a97e6507afa177eecdfd0"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-ExtraLight.ttf",
+      "sha1": "666356b2fa84d443e678a00fbc44cd9087e32cb4"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-ExtraLightItalic.ttf",
+      "sha1": "f4b6d12a82870cac19e9201468bb6a9b002deb47"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-Italic.ttf",
+      "sha1": "735b1dc00a1886d3ae5f38978708e1ee0c3bbd1f"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-Light.ttf",
+      "sha1": "da805a01dc43cd7a7786fc2e21828bb8c82d9482"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-LightItalic.ttf",
+      "sha1": "1edd1cf5e429a5139f6b67325b11f98afc3ff7ec"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-Medium.ttf",
+      "sha1": "b3f0077794a5765575cb7691896c34c47ff6b2fc"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-MediumItalic.ttf",
+      "sha1": "9e092c5b0ffc8d2c4e30d52f2b02e3101ef5b582"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-Regular.ttf",
+      "sha1": "4af599bd66c965955519013aaea3e57c1b63d779"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-SemiBold.ttf",
+      "sha1": "229d5b49f708350afe96fc14934e18a3f21a2d62"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-SemiBoldItalic.ttf",
+      "sha1": "88488349355fa16b78f5a48d7245843b0b4b8d44"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-Thin.ttf",
+      "sha1": "7783e2194b7fa5e35cad02ca65a95af4adf5eddd"
+    },
+    {
+      "path": "src/assets/fonts/ysabeau/Ysabeau-ThinItalic.ttf",
+      "sha1": "8853f8d644ce19c7d0297785beb249f35f7188c1"
+    }
+  ]
+}

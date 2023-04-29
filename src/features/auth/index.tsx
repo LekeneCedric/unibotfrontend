@@ -7,8 +7,8 @@ const Stack = createNativeStackNavigator();
 const Auth: React.FC<{}> = ({}) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name={'welcome'} component={Welcome} />
-      <Stack.Screen name={'login'} component={Login} />
+      <Stack.Screen name={'welcome'} component={Welcome} options={{headerShown:false}} />
+      <Stack.Screen name={'login'} component={Login} options={{headerShown:false}} />
     </Stack.Navigator>
   );
 };

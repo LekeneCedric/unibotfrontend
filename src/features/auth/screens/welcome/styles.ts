@@ -4,54 +4,47 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Colors from '../../../shared/theme/colors';
+import fontSize from "../../../shared/theme/fontSize";
+import fontFamily from "../../../shared/theme/fontFamily";
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    top: hp('5%'),
-    padding: hp('2.5%'),
-    backgroundColor: Colors.light,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    position: 'relative',
+  container:{
+    flex:1,
+    padding:wp('5%'),
+    alignItems:'center'
   },
-  button1: {
-    padding: wp('0.2%'),
-    alignItems: 'center',
-    color: Colors.primary,
-    fontWeight: 'bold',
-    fontSize: wp('1.5%'),
-    width: '40%',
-    backgroundColor: Colors.light,
-    borderRadius: 100,
+  botImage:{
+    marginTop:hp('2%'),
+    // backgroundColor:'gray',
+    width:wp('90%'),
+    height:hp('50%')
   },
-  button2: {
-    padding: wp('0.2%'),
-    alignItems: 'center',
-    color: Colors.light,
-    fontWeight: 'bold',
-    fontSize: wp('1.5%'),
-    width: '40%',
-    backgroundColor: Colors.primary,
-    borderRadius: 100,
+  container2:{
+    position:'absolute',
+    alignItems:'center',
+    bottom:hp('10%')
   },
-  textButton: {
-    // fontSize: moderateScale(15),
+  title:{
+    fontFamily: fontFamily.ysabeauBold,
+    fontSize:fontSize.mediumTitle,
+    marginBottom:hp('2%')
   },
-  presentation: {
-    position: 'relative',
-    bottom: hp('0.7%'),
-    left: wp('0.2%'),
+  description:{
+    fontFamily: fontFamily.ysabeauMedium,
+    textAlign:'center'
   },
-  // logo:{
-  //   alignSelf:'center',
-  //   width : wp(350),
-  //   height : verticalScale(350)
-  // },
-  buttons: {
-    marginTop: hp('0.2%'),
-    flexDirection: 'row',
-    alignItems: 'center',
+  button:{
+    backgroundColor:Colors.primary,
+    marginTop:hp('5%'),
+    width:'100%',
+    alignItems:'center',
+    padding:wp('4%'),
+    borderRadius:wp('2%')
+
   },
+  buttonText:{
+    fontFamily: fontFamily.ysabeauMedium,
+    color:Colors.light
+  }
 });
 export default styles;
