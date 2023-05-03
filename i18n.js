@@ -13,7 +13,7 @@ const resources = {
   en: {
     translation: translationEN,
   },
-  hn: {
+  fr: {
     translation: translationFR,
   },
 };

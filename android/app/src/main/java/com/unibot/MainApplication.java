@@ -9,8 +9,6 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
-//i18n package
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 

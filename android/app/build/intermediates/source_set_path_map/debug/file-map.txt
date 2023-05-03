@@ -30,7 +30,12 @@ com.unibot.app-mergeDebugResources-28 /home/code237/Documents/Soutenance/ProjetS
 com.unibot.app-merged_res-29 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/build/intermediates/merged_res/debug
 com.unibot.app-debug-30 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/res
 com.unibot.app-main-31 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/res
-com.unibot.app-packaged_res-32 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-i18n/android/build/intermediates/packaged_res/debug
-com.unibot.app-packaged_res-33 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
-com.unibot.app-packaged_res-34 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
-com.unibot.app-packaged_res-35 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-32 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-33 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/@react-native-picker/picker/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-34 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-document-picker/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-35 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-36 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-37 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-38 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-39 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
+com.unibot.app-packaged_res-40 /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug

@@ -1,3 +1,21 @@
 {
-    "getStarted":"Get Started"
+    "getStarted": "Get Started",
+    "changeLanguage": "Select language",
+    "alreadyregister": "Are you already registered ?",
+    "notregister": "not registered ?",
+    "connect_proposition": "Sign in",
+    "welcome_back": "Welcome Back !",
+    "create_account": "Create new acccount",
+    "fill_form": "Please fill in the form to continuer",
+    "signin_proposition": "Please sign in to your account",
+    "please_sign": "Please sign in to your account",
+    "password": "password",
+    "password_confirmation": "password confirmation",
+    "connextion": "Sign In",
+    "fullname": "full name",
+    "register": "Sign Up",
+    "sign_with_google": "Sign in with Google",
+    "signup_with_google": "Sign up with Google",
+    "phonenumber": "enter phone number",
+    "isconnexionmessage": "verification of information"
 }

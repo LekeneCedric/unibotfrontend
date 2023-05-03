@@ -1,3 +1,22 @@
 {
-    "getStarted":"Commencer"
+    "getStarted": "Commencer",
+    "changeLanguage": "Selectionner la langue",
+    "alreadyregister": "Vous etes deja inscrit ?",
+    "notregister": "Vous n'avez pas de compte ?",
+    "connect_proposition": "Connectez vous",
+    "welcome_back": "Bienvenue !",
+    "create_account": "Creer un nouveau compte",
+    "fill_form": "Bien vouloir remplir le formulaire pour continuer",
+    "signin_proposition": "S'il vous plait connectez vous a votre compte",
+    "please_sign": "S'il vous plait connectez vous a votre compte",
+    "connextion": "connexion",
+    "fullname": "nom complet",
+    "password": "mot de passe ",
+    "password_confirmation": "confirmation mot de passe",
+    "register": "s'enregistrer",
+    "sign_with_google": "Connexion avec Google",
+    "signup_with_google": "Inscription avec Google",
+    "phonenumber": "entrez le numero de telephone",
+    "isconnexionmessage": "verification des informations"
+
 }

@@ -11,14 +11,24 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-// react-native-i18n
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+// @react-native-async-storage/async-storage
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+// @react-native-picker/picker
+import com.reactnativecommunity.picker.RNCPickerPackage;
+// react-native-document-picker
+import com.reactnativedocumentpicker.DocumentPickerPackage;
+// react-native-image-picker
+import com.imagepicker.ImagePickerPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
 import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-svg
 import com.horcrux.svg.SvgPackage;
+// react-native-vector-icons
+import com.oblador.vectoricons.VectorIconsPackage;
+// react-native-webview
+import com.reactnativecommunity.webview.RNCWebViewPackage;
 
 public class PackageList {
   private Application application;
@@ -64,10 +74,15 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
-      new RNI18nPackage(),
+      new AsyncStoragePackage(),
+      new RNCPickerPackage(),
+      new DocumentPickerPackage(),
+      new ImagePickerPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
-      new SvgPackage()
+      new SvgPackage(),
+      new VectorIconsPackage(),
+      new RNCWebViewPackage()
     ));
   }
 }
