@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 
   },
   buttonText:{
-    fontFamily: fontFamily.ysabeauText,
+    fontFamily: fontFamily.ysabeauBold,
     color:Colors.light
   },
   already:{

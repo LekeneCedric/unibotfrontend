@@ -29,9 +29,18 @@ const Icons = {
 
     },
     PIECES: {
-      DOCUMENT: 'file-document-outline',
+      DOCUMENT: 'file-document',
       SEE:'eye',
       DELETE:'delete',
+    },
+    REQUESTS: {
+      DOCUMENT: 'file-document',
+      REQUEST: 'comment-edit',
+      DOWNLOAD: 'download',
+      information: 'information',
+      check: 'check',
+      notfind: 'alert-circle-outline',
+      uncheck: 'checkbox-blank-outline',
     }
   }
 };

@@ -14,17 +14,19 @@ import IPiece from "../../../../models/piece.model";
 import { useAppDispatch, useAppSelector } from "../../../../../hooks";
 import ROUTES from "../../../../api/routes";
 import Text from "../../../shared/components/native/text";
-import { GET } from "../../../../api/methods";
-import { load } from "./pieceSlice";
+import { DELETE, GET } from "../../../../api/methods";
+import { loadPiece, removePiece } from "../../../../redux/reducers/pieceSlice";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Pieces()
 {
   const [isLoading, setIsLoading] = useState(true);
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
-  // const pieces : IPiece[] = useAppSelector(state=>state.pieces.pieces);
-  const [pieces,setPieces] = useState(useAppSelector(state=>state.pieces.pieces));
+  const pieces = useAppSelector(state=>state.pieces.pieces);
   const [token,setToken] = useState(useAppSelector(state=>state.auth.userToken));
+  const [selectedId,setSelectedId] = useState<number>(0);
+  const [search,setSearch] = useState<string>('');
   useEffect(()=>{
     navigation.setOptions({
       headerTitleStyle:{
@@ -44,40 +46,26 @@ export default function Pieces()
     GET(ROUTES.V1.USER.PIECE.GET,token)
       .then(res=>res.json())
       .then(res=>{
-        console.warn(res)
-        // @ts-ignore
-        dispatch(load())
+        console.log(res)
+        dispatch(loadPiece(res));
       })
       .catch(err=>{
       })
       .finally(()=>{
+        console.log(pieces)
         setIsLoading(false);
       })
   },[dispatch]);
-  useEffect(()=>{
-
-  },[])
   return <SafeAreaView style={styles.container}>
     <Searchbar
       placeholder="Search"
       inputStyle={styles.searchBarInput}
-      onChangeText={() => {}}
-      value={''}
+      onChangeText={(searchText) => {setSearch(searchText)}}
+      value={search}
       style={styles.searchBar}
     />
-    <AnimatedFAB
-      color={Colors.light}
-      icon={Icons.add}
-      label={'add new piece'}
-      extended={true}
-      animateFrom={'right'}
-      onPress={()=>{
-        //@ts-ignore
-        navigation.navigate('new piece')
-      }}
-      style={styles.fab}
-    />
-    <ScrollView  showsVerticalScrollIndicator={false}>
+
+    <ScrollView style={styles.scrollview}  showsVerticalScrollIndicator={false}>
       {
 
         isLoading ?
@@ -88,15 +76,27 @@ export default function Pieces()
             </View>
           ) :
           (
-            <ScrollView>
-              {
                 pieces.map(p=>{
-                  return <PieceItem name={p.name} type={p.type} media={p.media}/>
+                  if (p.name.toLowerCase().includes(search.toLowerCase())|| search==="")
+                  {
+                    return <PieceItem key={p.id} id={p.id} name={p.name} types={p.types} media={p.media}/>
+                  }
+                  return null
                 })
-              }
-            </ScrollView>
           )
       }
     </ScrollView>
+    <AnimatedFAB
+      color={Colors.light}
+      icon={Icons.add}
+      label={'add new piece'}
+      extended={true}
+      animateFrom={'right'}
+      onPress={()=>{
+        //@ts-ignore
+        navigation.navigate('new_piece')
+      }}
+      style={styles.fab}
+    />
   </SafeAreaView>
 }

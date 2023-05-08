@@ -13,7 +13,7 @@ import fontFamily from "../../../shared/theme/fontFamily";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import fontSize from "../../../shared/theme/fontSize";
 import { useAppDispatch } from "../../../../../hooks";
-import { logout } from "../../../auth/authSlice";
+import { logout } from "../../../../redux/reducers/authSlice";
 
 export default function Settings()
 {

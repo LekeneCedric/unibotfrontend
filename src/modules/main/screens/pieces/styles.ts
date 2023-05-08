@@ -9,6 +9,9 @@ const styles = StyleSheet.create({
     padding: wp('2%'),
     flexGrow:1
   },
+  scrollview: {
+    height: hp('78%')
+  },
   loadContainer: {
     alignItems:'center'
   },
@@ -23,9 +26,9 @@ const styles = StyleSheet.create({
   fab: {
     color:Colors.light,
     position: 'absolute',
-    zIndex:10,
+    zIndex:1,
     backgroundColor: Colors.primary,
-    bottom: hp('2%'),
+    bottom: hp('3%'),
     right: wp('2%'),
   }
 });

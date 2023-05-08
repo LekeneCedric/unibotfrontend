@@ -1,5 +1,5 @@
 import { ActivityIndicator, Image, SafeAreaView, TouchableOpacity, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useEffect, useMemo, useState } from "react";
 import fontFamily from "../../../../../shared/theme/fontFamily";
 import fontSize from "../../../../../shared/theme/fontSize";
@@ -15,16 +15,22 @@ import Text from "../../../../../shared/components/native/text";
 import DocumentPicker from 'react-native-document-picker';
 import {WebView} from "react-native-webview";
 import Simplebutton from "../../../../../shared/components/buttons/simplebutton";
-import { POST } from "../../../../../../api/methods";
+import { GET, POST } from "../../../../../../api/methods";
 import ROUTES from "../../../../../../api/routes";
-import { useAppSelector } from "../../../../../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../../../hooks";
 import Toast from "react-native-toast-message";
 import AwesomeAlert from "react-native-awesome-alerts";
+import { addPiece } from "../../../../../../redux/reducers/pieceSlice";
+import ITypePiece from "../../../../../../models/typePiece.model";
 
 interface Props {
   onDocumentPick: (uri: string, name: string) => void;
 }
 export default function AddPiece ({onDocumentPick}:Props){
+  const route = useRoute();
+  //@ts-ignore
+  const piece_id = route.params!=undefined?route.params.piece_id:null;
+  const dispatch = useAppDispatch();
   const types_requetes = useMemo(()=>{return [
     'fiche_preinscription',
     'acte_naissance'
@@ -32,16 +38,17 @@ export default function AddPiece ({onDocumentPick}:Props){
   const {t} = useTranslation();
   const navigation = useNavigation();
   const token = useAppSelector(state=>state.auth.userToken);
+  const [typesPieces,setTypesPieces] = useState<ITypePiece[]>([]);
   const [loading, setLoading] = useState(false);
   const [isLoading,setIsLoading] = useState(false);
+  const [loadType,setLoadType] = useState(false);
   const [previewUri, setPreviewUri] = useState('');
   const [name,setName] = useState<string>('');
-  const [type,setType] = useState<string>(types_requetes[0]);
+  const [selectedType,setSelectedType] = useState<number>(0);
   const [documentName, setDocumentName] = useState<string>('');
   const [documentType, setDocumentType] = useState<string>('');
   const pickDocument = async () => {
     try {
-
       setLoading(true);
       const result = await DocumentPicker.pick({
         type: [DocumentPicker.types.allFiles],
@@ -64,8 +71,8 @@ export default function AddPiece ({onDocumentPick}:Props){
     setIsLoading(true);
     try {
       const data = new FormData();
-      data.append('type',type);
       data.append('name',name);
+      data.append('type_piece_id',selectedType);
       data.append('file',{
         uri: previewUri,
         type: documentType,
@@ -75,7 +82,9 @@ export default function AddPiece ({onDocumentPick}:Props){
       POST(apiRoute,data,token)
         .then(res=>res.json())
         .then(responseData=>{
-          console.warn(responseData);
+          console.log('piece to add ')
+          console.log(responseData);
+          dispatch(addPiece(responseData));
           navigation.goBack();
           Toast.show({
             type: 'success',
@@ -89,7 +98,7 @@ export default function AddPiece ({onDocumentPick}:Props){
           Toast.show({
             type: 'error',
             position: 'top',
-            text2: 'Une erreur est survenue !'
+            text2: 'Une erreur est survenue reessayez !'
           });
         })
         .finally(()=>{
@@ -108,6 +117,8 @@ export default function AddPiece ({onDocumentPick}:Props){
         fontFamily:fontFamily.ysabeauMedium,
         fontSize:fontSize.smallTitle
       },
+      //@ts-ignore
+      headerTitle:route.params!=undefined?`Add ${route.params.name}`:'add new piece',
       headerTitleAlign:'center',
       headerLeft:()=>(
         <TouchableOpacity style={{marginLeft:widthPercentageToDP('2%')}} onPress={()=>navigation.goBack()}>
@@ -116,6 +127,32 @@ export default function AddPiece ({onDocumentPick}:Props){
       )
     })
   },[navigation])
+  useEffect(()=>{
+    setLoadType(true);
+    GET(ROUTES.V1.USER.TYPE_PIECE.GET,token)
+      .then(res=>{
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then(res=>{
+        setTypesPieces(res);
+        if (piece_id!=null)
+        {//si l'id de la piece est passé en parametre
+          console.warn(piece_id);
+          setSelectedType(piece_id);
+        }
+        else
+        {
+          setSelectedType(res[0].id);
+        }
+      })
+      .catch(err=>{
+        console.log(`error : ${err}`)
+      })
+      .finally(()=>{setLoadType(false)})
+  },[])
   return (
     <SafeAreaView style={styles.container}>
       <AwesomeAlert
@@ -124,16 +161,36 @@ export default function AddPiece ({onDocumentPick}:Props){
         message={'ajout du document ....'}
         showProgress={true}
         closeOnTouchOutside={false}
-        closeOnHardwareBackPress={false}
-      />
+        closeOnHardwareBackPress={false}/>
       <View>
         <Text style={styles.intitule}>{t('name')}</Text>
         <CustomTextInput placeholder={t('name')} onChangeText={(newName)=>{setName(newName)}}/>
         <Text style={styles.intitule}>type de requete</Text>
         <View style={styles.pickerContainer}>
-          <Picker selectedValue={type} onValueChange={(itemValue, itemIndex)=>{setType(itemValue)}} style={styles.picker} itemStyle={styles.pickerItem} dropdownIconColor={Colors.primary}>
+          <Picker selectedValue={selectedType}
+                  onValueChange={(itemValue, itemIndex)=>{setSelectedType(itemValue)}}
+                  style={styles.picker}
+                  itemStyle={styles.pickerItem}
+                  dropdownIconColor={Colors.primary}>
             {
-              types_requetes.map((item,index)=><Picker.Item fontFamily={fontFamily.ysabeauText} label={item} value={item} />)
+              loadType && <ActivityIndicator size="small" color={Colors.primary}/>
+            }
+            {
+              typesPieces.map((item,index)=>
+              {
+                if (piece_id!=null)
+                {
+                  if (item.id === piece_id)
+                  {
+                    return <Picker.Item fontFamily={fontFamily.ysabeauText} label={item.name} value={item.id} />
+                  }
+                }
+                else
+                {
+                  return <Picker.Item fontFamily={fontFamily.ysabeauText} label={item.name} value={item.id} />
+                }
+              }
+                )
             }
           </Picker>
         </View>
@@ -141,7 +198,7 @@ export default function AddPiece ({onDocumentPick}:Props){
         <TouchableOpacity style={styles.uploadButton} onPress={pickDocument}>
           <Icon name={Icons.MAIN.PIECES.DOCUMENT} size={widthPercentageToDP('5%')} color={Colors.primary} />
           {loading ? (
-            <ActivityIndicator size="small" color="#333" />
+            <ActivityIndicator size="small" color={Colors.primary} />
           ) : (
             <>
               <Text style={styles.uploadText}>

@@ -13,8 +13,10 @@ import PhoneInput from "../../components/inputs/phoneinput";
 import { POST } from "../../../../api/methods";
 import routes from "../../../../api/routes";
 import AwesomeAlert from "react-native-awesome-alerts";
-import { setCredential, setUser } from "../../authSlice";
+import { setCredential, setUser } from "../../../../redux/reducers/authSlice";
 import { useAppDispatch, useAppSelector } from "../../../../../hooks";
+import ROUTES from "../../../../api/routes";
+import IUser from "../../../../models/user.model";
 
 export default function Register():JSX.Element{
   let token = useAppSelector(state=>state.auth.userToken);
@@ -25,9 +27,12 @@ export default function Register():JSX.Element{
   const [showError,setShowError] = useState(false);
   const [errorMessage,setErrorMessage] = useState("")
   const [currentLang,setCurrentLang] = useState(i18n.language);
-  const [userData,setUserData] = useState({});
+  const [userData, setUserData] = useState<IUser>({});
   const signUp = ()=>{
-    POST(routes.AUTH.REGISTER,userData)
+    const data = new FormData();
+    data.append('email',userData.email);
+    data.append('password',userData.password);
+    POST(ROUTES.V1.AUTH.REGISTER,data)
       .then(response=>{
         if (!response.ok) {
           if (response.status===500) {
@@ -44,7 +49,11 @@ export default function Register():JSX.Element{
         return response.json();
       })
       .then(responseData=>{
-        dispatch(setCredential(responseData.token));
+        let data = {
+          TYPE : "SET_CREDENTIAL",
+          value : responseData.token
+        }
+        dispatch(setCredential(data));
         dispatch(setUser(responseData.user));
       })
       .catch((err)=>{

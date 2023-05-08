@@ -13,7 +13,7 @@ import { POST } from "../../../../api/methods";
 import routes from "../../../../api/routes";
 import AwesomeAlert from "react-native-awesome-alerts";
 import { useAppDispatch, useAppSelector } from "../../../../../hooks";
-import { setCredential, setUser } from "../../authSlice";
+import { setCredential, setUser } from "../../../../redux/reducers/authSlice";
 
 interface Iuser {
   email?:string,
@@ -56,7 +56,11 @@ export default function Login(): JSX.Element {
         }
       })
       .then((responseData)=>{
-        dispatch(setCredential(responseData.token));
+        let data = {
+          TYPE : "SET_CREDENTIAL",
+          value : responseData.token
+        }
+        dispatch(setCredential(data));
         dispatch(setUser(responseData.user));
       })
       .catch((err)=>{

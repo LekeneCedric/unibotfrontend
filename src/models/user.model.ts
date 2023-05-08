@@ -7,5 +7,6 @@ export default interface IUser {
   phone1?:string,
   phone2?:string,
   email?:string,
-  password?:string
+  password?:string,
+  password_confirmation?:string,
 };

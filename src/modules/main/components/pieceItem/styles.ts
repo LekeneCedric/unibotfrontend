@@ -20,6 +20,10 @@ const styles = StyleSheet.create({
     borderRadius:wp('2%'),
     flexDirection:'row'
   },
+  typePiece: {
+    fontFamily:fontFamily.ysabeauText,
+    color:Colors.gray
+  },
   iconRightContainer: {
     position:'absolute',
     right: 0,
@@ -29,7 +33,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   content: {
-    padding: wp('2%')
+    padding: wp('2%'),
+    flexDirection:'column'
   },
   title: {
     fontFamily: fontFamily.ysabeauText

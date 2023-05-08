@@ -3,8 +3,9 @@ const Colors = {
   light: '#FAFAFA',
   gray: '#BEB3B3',
   black: '#2A2727',
-  primary: '#15283D',
+  primary: '#476d8c',
   secondary: '#20898A',
+  success: '#2ECC71',
   danger: '#EC2424',
   inputBackground: '#233C57'
 };

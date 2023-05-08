@@ -7,6 +7,7 @@ import Main from "../modules/main";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import AddPiece from "../modules/main/screens/pieces/components/addPiece";
 import PreviewPiece from "../modules/main/screens/pieces/components/previewPiece";
+import RequestDetail from "../modules/main/screens/requests/components/requestDetail";
 
 const Stack = createNativeStackNavigator();
 const Routes: React.FC<{}> = ({}) => {
@@ -31,8 +32,9 @@ const Routes: React.FC<{}> = ({}) => {
                 component={Main}
                 options={{headerShown: false}}
               />
-              <Stack.Screen name={'new piece'} component={AddPiece}/>
+              <Stack.Screen name={'new_piece'} component={AddPiece}/>
               <Stack.Screen name={'preview_document'} component={PreviewPiece}/>
+              <Stack.Screen name={'detail_request'} component={RequestDetail}/>
               </>
             )
         }

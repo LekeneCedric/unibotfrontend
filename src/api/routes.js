@@ -8,12 +8,25 @@ const ROUTES = {
       GET:'v1/user',
       UPDATE:'v1/user/update',
       LOGOUT:'v1/user/logout',
+      TYPE_PIECE:{
+        GET:'v1/user/type_piece/my',
+      },
+      TYPE_REQUEST:{
+        GET:'v1/user/type_request/',
+      },
+      // REQUEST:{
+      //   GET:'v1/user/request',
+      //   ADD:'v1/user/request/add',
+      //   DELETE:'v1/user/request',
+      // },
       PIECE:{
         GET:'v1/user/piece',
         ADD:'v1/user/piece/add',
         DELETE:'v1/user/piece'
       },
       REQUEST: {
+        GET: 'v1/user/request',
+        DETAIL: 'v1/user/request/download',
         DEMANDESRELEVENOTE:{
           GET:'v1/user/request/demandeReleveNote',
           ADD:'v1/user/request/demandeReleveNote/add',
