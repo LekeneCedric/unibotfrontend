@@ -1,19 +1,18 @@
-import { ActivityIndicator, Image, SafeAreaView, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Image, Linking, SafeAreaView, TouchableOpacity, View } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useEffect, useMemo, useState } from "react";
 import fontFamily from "../../../../../shared/theme/fontFamily";
 import fontSize from "../../../../../shared/theme/fontSize";
-import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
+import { widthPercentageToDP } from "react-native-responsive-screen";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons from "../../../../../shared/theme/icon";
 import Colors from "../../../../../shared/theme/colors";
 import styles from "./styles";
 import CustomTextInput from "../../../../../auth/components/inputs/textinput";
 import { useTranslation } from "react-i18next";
-import {Picker} from '@react-native-picker/picker';
+import { Picker } from "@react-native-picker/picker";
 import Text from "../../../../../shared/components/native/text";
-import DocumentPicker from 'react-native-document-picker';
-import {WebView} from "react-native-webview";
+import DocumentPicker from "react-native-document-picker";
 import Simplebutton from "../../../../../shared/components/buttons/simplebutton";
 import { GET, POST } from "../../../../../../api/methods";
 import ROUTES from "../../../../../../api/routes";
@@ -209,7 +208,14 @@ export default function AddPiece ({onDocumentPick}:Props){
         </TouchableOpacity>
             {previewUri ? (
                 <TouchableOpacity onPress={()=>{ // @ts-ignore
-                  navigation.navigate('preview_document',{uri:previewUri,type:documentType})}}>
+                  if (documentType === 'application/pdf') {
+                    Linking.openURL(previewUri);
+                  }
+                  else {
+                    //@ts-ignore
+                    navigation.navigate('preview_document',{uri:previewUri,type:documentType})
+                  }
+                  }}>
                   {
                     documentType === 'application/pdf' ?
                       (

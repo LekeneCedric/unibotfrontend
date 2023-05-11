@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { get, remove, save } from "../../modules/shared/utils/localstorage";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface playload {

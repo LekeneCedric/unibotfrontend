@@ -8,10 +8,12 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons from "../../../../../shared/theme/icon";
 import { widthPercentageToDP } from "react-native-responsive-screen";
 import Text from "../../../../../shared/components/native/text";
-import { storageBackend } from "../../../../../../api/methods";
+import { DELETE, storageBackend } from "../../../../../../api/methods";
 import { useAppDispatch, useAppSelector } from "../../../../../../../hooks";
 import { useNavigation } from "@react-navigation/native";
 import moment from "moment";
+import routes from "../../../../../../api/routes";
+import { removeRequest } from "../../../../../../redux/reducers/requestSlice";
 
 interface props extends IRequest{}
 const RequestItem : React.FC<props> = ({id, types, created_at})=>{
@@ -20,9 +22,22 @@ const RequestItem : React.FC<props> = ({id, types, created_at})=>{
   const [token,setToken] = useState(useAppSelector(state=>state.auth.userToken));
   const [showAlert,setShowAlert] = useState(false);
   const [parseDate,setParseDate] = useState('');
+  const DeleteRequest = ()=>{
+    DELETE(`${routes.V1.USER.REQUEST.DELETE}`,id!,token)
+      .then(res=>res.json())
+      .then(res=>{
+        dispatch(removeRequest(id!))
+      })
+      .catch(err=>{
+        console.log(err)
+      })
+      .finally(()=>{
+        setShowAlert(false);
+      })
+  }
   useEffect(()=>{
     setParseDate(`${new Date(created_at!).getDay()+1}/ ${new Date(created_at!).getMonth()} / ${new Date(created_at!).getFullYear()}`);
-  },[])
+  },[]);
   return (
     <View>
       <View style={styles.container}>
@@ -36,7 +51,7 @@ const RequestItem : React.FC<props> = ({id, types, created_at})=>{
           closeOnTouchOutside={false}
           closeOnHardwareBackPress={false}
           onCancelPressed={()=>{setShowAlert(false)}}
-          onConfirmPressed={()=>{}}
+          onConfirmPressed={DeleteRequest}
           confirmButtonColor={Colors.danger}
         />
         <Icon style={styles.icon1} name={Icons.MAIN.REQUESTS.REQUEST} size={widthPercentageToDP('7%')} color={Colors.primary}/>

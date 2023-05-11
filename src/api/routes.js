@@ -26,14 +26,16 @@ const ROUTES = {
       },
       REQUEST: {
         GET: 'v1/user/request',
-        DETAIL: 'v1/user/request/download',
-        DEMANDESRELEVENOTE:{
-          GET:'v1/user/request/demandeReleveNote',
-          ADD:'v1/user/request/demandeReleveNote/add',
-          GETONE:'v1/user/request/demandeReleveNote/one',
-          REMOVE:'v1/user/request/demandeReleveNote/remove',
-          DOWNLOAD:'v1/user/request/demandeReleveNote/download/req'
-        }
+        DETAIL: 'v1/user/request/preview',
+        ADD: 'v1/user/request/add',
+        DELETE: 'v1/user/request/delete'
+        // DEMANDESRELEVENOTE:{
+        //   GET:'v1/user/request/demandeReleveNote',
+        //   ADD:'v1/user/request/demandeReleveNote/add',
+        //   GETONE:'v1/user/request/demandeReleveNote/one',
+        //   REMOVE:'v1/user/request/demandeReleveNote/remove',
+        //   DOWNLOAD:'v1/user/request/demandeReleveNote/download/req'
+        // }
       }
     }
   }

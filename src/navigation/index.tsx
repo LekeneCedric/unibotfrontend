@@ -33,7 +33,7 @@ const Routes: React.FC<{}> = ({}) => {
                 options={{headerShown: false}}
               />
               <Stack.Screen name={'new_piece'} component={AddPiece}/>
-              <Stack.Screen name={'preview_document'} component={PreviewPiece}/>
+              <Stack.Screen name={'preview_document'} component={PreviewPiece} options={{headerShown:false}}/>
               <Stack.Screen name={'detail_request'} component={RequestDetail}/>
               </>
             )

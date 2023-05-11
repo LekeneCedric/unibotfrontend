@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.unibot.app-mergeDebugResources-27:/values-eu/values-eu.xml",
+            "outputFile": "com.unibot.app-mergeDebugResources-28:/values-eu/values-eu.xml",
             "map": [
                 {
                     "source": "/home/code237/.gradle/caches/transforms-3/08e1174eef2c209ea18090f1084adbcb/transformed/core-1.7.0/res/values-eu/values-eu.xml",

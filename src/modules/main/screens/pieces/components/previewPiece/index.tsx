@@ -2,7 +2,6 @@ import React from "react";
 import { Image, View } from "react-native";
 import styles from "./styles";
 import { useRoute } from "@react-navigation/native";
-import { WebView } from "react-native-webview/lib";
 
 const PreviewPiece:React.FC<{}> = ({}) => {
   const route = useRoute();
@@ -11,11 +10,9 @@ const PreviewPiece:React.FC<{}> = ({}) => {
   return (
     <View style={styles.container}>
       {
-        type === 'application/pdf' ?
+        type === 'pdf' ?
         (
-        <WebView
-          source={{ uri: uri }}
-          style={styles.image} />
+          <></>
         )
         :
         (

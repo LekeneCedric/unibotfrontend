@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-picker/picker
 import com.reactnativecommunity.picker.RNCPickerPackage;
+// react-native-dialogflow
+import de.innfactory.apiai.RNApiAiPackage;
 // react-native-document-picker
 import com.reactnativedocumentpicker.DocumentPickerPackage;
 // react-native-image-picker
@@ -76,6 +78,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
       new RNCPickerPackage(),
+      new RNApiAiPackage(),
       new DocumentPickerPackage(),
       new ImagePickerPackage(),
       new SafeAreaContextPackage(),

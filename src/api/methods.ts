@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../hooks";
 
-export const urlBackend = "http://192.168.33.113:8000/api/";
-export const storageBackend = "http://192.168.33.113:8000/";
+export const urlBackend = "http://192.168.61.113:8000/api/";
+export const storageBackend = "http://192.168.61.113:8000/";
 export async function GET(route: string,token?:string)
 {
   return await fetch(`${urlBackend+route}`, {

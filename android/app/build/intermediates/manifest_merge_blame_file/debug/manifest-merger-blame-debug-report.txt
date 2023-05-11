@@ -17,115 +17,119 @@
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 13-->[com.facebook.flipper:flipper:0.125.0] /home/code237/.gradle/caches/transforms-3/236929aa564a4c4dfa1b417642a2a2ae/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
 13-->[com.facebook.flipper:flipper:0.125.0] /home/code237/.gradle/caches/transforms-3/236929aa564a4c4dfa1b417642a2a2ae/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
-14
-15    <application
-15-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:5:5-26:19
-16        android:name="com.unibot.MainApplication"
-16-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:6:7-38
-17        android:allowBackup="false"
-17-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:10:7-34
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.7.0] /home/code237/.gradle/caches/transforms-3/08e1174eef2c209ea18090f1084adbcb/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:8:7-41
-21        android:label="@string/app_name"
-21-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:7:7-39
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:9:7-52
-23        android:supportsRtl="true"
-23-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:11:7-33
-24        android:theme="@style/AppTheme"
-24-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:13:7-38
-25        android:usesCleartextTraffic="true" >
-25-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:12:7-42
-26        <activity
-26-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/AndroidManifest.xml:11:9-111
-27            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-27-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/AndroidManifest.xml:11:19-83
-28            android:exported="false" />
-28-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/AndroidManifest.xml:11:84-108
-29        <activity
-29-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:14:7-25:18
-30            android:name="com.unibot.MainActivity"
-30-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:15:9-37
-31            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-31-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:17:9-118
-32            android:exported="true"
-32-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:20:9-32
-33            android:label="@string/app_name"
-33-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:16:9-41
-34            android:launchMode="singleTask"
-34-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:18:9-40
-35            android:windowSoftInputMode="adjustResize" >
-35-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:19:9-51
-36            <intent-filter>
-36-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:21:9-24:25
-37                <action android:name="android.intent.action.MAIN" />
-37-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:22:13-65
-37-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:22:21-62
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:23:13-73
-39-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:23:23-70
-40            </intent-filter>
-41        </activity>
-42
-43        <provider
-43-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
-44            android:name="com.imagepicker.ImagePickerProvider"
-44-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
-45            android:authorities="com.unibot.imagepickerprovider"
-45-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
-46            android:exported="false"
-46-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
-47            android:grantUriPermissions="true" >
-47-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
-48            <meta-data
-48-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
-49                android:name="android.support.FILE_PROVIDER_PATHS"
-49-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
-50                android:resource="@xml/imagepicker_provider_paths" />
-50-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
-51        </provider>
-52        <provider
-52-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
-53            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
-53-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
-54            android:authorities="com.unibot.fileprovider"
-54-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
-55            android:exported="false"
-55-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
-56            android:grantUriPermissions="true" >
-56-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
-57            <meta-data
-57-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
-58                android:name="android.support.FILE_PROVIDER_PATHS"
-58-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
-59                android:resource="@xml/file_provider_paths" />
-59-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
-60        </provider>
-61        <provider
-61-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-62            android:name="androidx.startup.InitializationProvider"
-62-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-63            android:authorities="com.unibot.androidx-startup"
-63-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-64            android:exported="false" >
-64-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-65            <meta-data
-65-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-66                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-66-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-67                android:value="androidx.startup" />
-67-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-68            <meta-data
-68-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/code237/.gradle/caches/transforms-3/168829b299da31b5f39d19c1353bb79f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-69                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-69-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/code237/.gradle/caches/transforms-3/168829b299da31b5f39d19c1353bb79f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-70                android:value="androidx.startup" />
-70-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/code237/.gradle/caches/transforms-3/168829b299da31b5f39d19c1353bb79f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-71        </provider>
-72    </application>
-73
-74</manifest>
+14    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+14-->[:react-native-dialogflow] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-dialogflow/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-71
+14-->[:react-native-dialogflow] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-dialogflow/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-68
+15
+16    <application
+16-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:5:5-27:19
+17        android:name="com.unibot.MainApplication"
+17-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:7:7-38
+18        android:allowBackup="false"
+18-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:11:7-34
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.7.0] /home/code237/.gradle/caches/transforms-3/08e1174eef2c209ea18090f1084adbcb/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+20-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:6:7-32
+21        android:icon="@mipmap/ic_launcher"
+21-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:9:7-41
+22        android:label="@string/app_name"
+22-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:8:7-39
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:10:7-52
+24        android:supportsRtl="true"
+24-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:12:7-33
+25        android:theme="@style/AppTheme"
+25-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:14:7-38
+26        android:usesCleartextTraffic="true" >
+26-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:13:7-42
+27        <activity
+27-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/AndroidManifest.xml:11:9-111
+28            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+28-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/AndroidManifest.xml:11:19-83
+29            android:exported="false" />
+29-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/debug/AndroidManifest.xml:11:84-108
+30        <activity
+30-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:15:7-26:18
+31            android:name="com.unibot.MainActivity"
+31-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:16:9-37
+32            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+32-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:18:9-118
+33            android:exported="true"
+33-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:21:9-32
+34            android:label="@string/app_name"
+34-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:17:9-41
+35            android:launchMode="singleTask"
+35-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:19:9-40
+36            android:windowSoftInputMode="adjustResize" >
+36-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:20:9-51
+37            <intent-filter>
+37-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:22:9-25:25
+38                <action android:name="android.intent.action.MAIN" />
+38-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:23:13-65
+38-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:23:21-62
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:24:13-73
+40-->/home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/android/app/src/main/AndroidManifest.xml:24:23-70
+41            </intent-filter>
+42        </activity>
+43
+44        <provider
+44-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+45            android:name="com.imagepicker.ImagePickerProvider"
+45-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+46            android:authorities="com.unibot.imagepickerprovider"
+46-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+47            android:exported="false"
+47-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+48            android:grantUriPermissions="true" >
+48-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+49            <meta-data
+49-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
+50                android:name="android.support.FILE_PROVIDER_PATHS"
+50-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+51                android:resource="@xml/imagepicker_provider_paths" />
+51-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
+52        </provider>
+53        <provider
+53-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+54            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+54-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
+55            android:authorities="com.unibot.fileprovider"
+55-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
+56            android:exported="false"
+56-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+57            android:grantUriPermissions="true" >
+57-->[:react-native-webview] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+58            <meta-data
+58-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
+59                android:name="android.support.FILE_PROVIDER_PATHS"
+59-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+60                android:resource="@xml/file_provider_paths" />
+60-->[:react-native-image-picker] /home/code237/Documents/Soutenance/ProjetSoutenance/unibotfrontend/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
+61        </provider>
+62        <provider
+62-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+63            android:name="androidx.startup.InitializationProvider"
+63-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+64            android:authorities="com.unibot.androidx-startup"
+64-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+65            android:exported="false" >
+65-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+66            <meta-data
+66-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+67                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+67-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+68                android:value="androidx.startup" />
+68-->[androidx.emoji2:emoji2:1.0.0] /home/code237/.gradle/caches/transforms-3/30102b16e64b2b966e993f978f0d77f3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+69            <meta-data
+69-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/code237/.gradle/caches/transforms-3/168829b299da31b5f39d19c1353bb79f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+70                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+70-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/code237/.gradle/caches/transforms-3/168829b299da31b5f39d19c1353bb79f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+71                android:value="androidx.startup" />
+71-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/code237/.gradle/caches/transforms-3/168829b299da31b5f39d19c1353bb79f/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+72        </provider>
+73    </application>
+74
+75</manifest>

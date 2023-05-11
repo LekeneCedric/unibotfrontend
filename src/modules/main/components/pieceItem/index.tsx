@@ -3,7 +3,7 @@ import styles from "./styles";
 import Colors from "../../../shared/theme/colors";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { widthPercentageToDP } from "react-native-responsive-screen";
-import { TouchableOpacity, View } from "react-native";
+import { Linking, TouchableOpacity, View } from "react-native";
 import Text from "../../../shared/components/native/text";
 import Icons from "../../../shared/theme/icon";
 import IPiece from "../../../../models/piece.model";
@@ -68,12 +68,16 @@ const PieceItem:React.FC<props> = ({ id ,name,types, media})=>{
       <Icon style={styles.icon1} name={Icons.MAIN.PIECES.DOCUMENT} size={widthPercentageToDP('7%')} color={Colors.primary}/>
       <View style={styles.content}>
         <Text style={[styles.title]}>{name}</Text>
-        {/*<Text style={styles.typePiece}>{types.name}</Text>*/}
       </View>
       <View style={styles.iconRightContainer}>
-        <TouchableOpacity onPress={()=>{
-          //@ts-ignore
-          navigation.navigate('preview_document',{uri:`${storageBackend}/${media.filePath}`,type:"image/png"})
+        <TouchableOpacity onPress={() => {
+          if (media.filePath.includes('pdf')) {
+            const url =`${storageBackend}/${media.filePath}`;
+            Linking.openURL(url)
+          } else {
+            //@ts-ignore
+            navigation.navigate('preview_document', { uri: `${storageBackend}/${media.filePath}`, type: "image/png" })
+          }
         }}>
           <Icon name={Icons.MAIN.PIECES.SEE} size={widthPercentageToDP('6%')} color={Colors.primary}/>
         </TouchableOpacity>
