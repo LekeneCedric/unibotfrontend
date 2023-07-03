@@ -38,7 +38,7 @@ export default function Main()
           tabBarLabelStyle:{fontFamily:fontFamily.ysabeauMedium,fontSize:widthPercentageToDP('3%')},
         })}
       >
-        <Tab.Screen name={'assistant'} component={Assistant} options={{headerShown:false}}/>
+        <Tab.Screen name={'assistant'} component={Assistant} options={{headerShown:true}}/>
         <Tab.Screen name={'requests'} component={Requests}/>
         <Tab.Screen name={'pieces'} component={Pieces}/>
         <Tab.Screen name={'settings'} component={Settings}/>

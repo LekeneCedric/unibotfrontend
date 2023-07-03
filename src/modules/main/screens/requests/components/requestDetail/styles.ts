@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import Colors from "../../../../../shared/theme/colors";
 import fontFamily from "../../../../../shared/theme/fontFamily";
 import fontSize from "../../../../../shared/theme/fontSize";
-import { widthPercentageToDP } from "react-native-responsive-screen";
+import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 
 const styles = StyleSheet.create({
   container: {
@@ -29,6 +29,11 @@ const styles = StyleSheet.create({
   section: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  textwarning: {
+    marginTop: heightPercentageToDP('2%'),
+    textAlign: 'center',
+
   }
 });
 export default styles;

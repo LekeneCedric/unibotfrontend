@@ -14,6 +14,9 @@ const ROUTES = {
       TYPE_REQUEST:{
         GET:'v1/user/type_request/',
       },
+      CATEGORIE_PIECE:{
+        GET:'v1/user/categorie_piece/',
+      },
       // REQUEST:{
       //   GET:'v1/user/request',
       //   ADD:'v1/user/request/add',
@@ -28,7 +31,8 @@ const ROUTES = {
         GET: 'v1/user/request',
         DETAIL: 'v1/user/request/preview',
         ADD: 'v1/user/request/add',
-        DELETE: 'v1/user/request/delete'
+        DELETE: 'v1/user/request/delete',
+        DOWNLOAD: 'v1/user/request/download'
         // DEMANDESRELEVENOTE:{
         //   GET:'v1/user/request/demandeReleveNote',
         //   ADD:'v1/user/request/demandeReleveNote/add',

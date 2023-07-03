@@ -26,7 +26,7 @@ i18n
     compatibilityJSON: 'v3',
     resources,
     lng:"en", //default language
-    keySeparator: false,
+    keySeparator: ".",
     interpolation: {
       escapeValue: false,
     },

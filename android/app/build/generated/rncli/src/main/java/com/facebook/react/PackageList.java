@@ -19,8 +19,14 @@ import com.reactnativecommunity.picker.RNCPickerPackage;
 import de.innfactory.apiai.RNApiAiPackage;
 // react-native-document-picker
 import com.reactnativedocumentpicker.DocumentPickerPackage;
+// react-native-fetch-blob
+import com.RNFetchBlob.RNFetchBlobPackage;
+// react-native-fs
+import com.rnfs.RNFSPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-pdf
+import org.wonday.pdf.RCTPdfView;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
@@ -80,7 +86,10 @@ public class PackageList {
       new RNCPickerPackage(),
       new RNApiAiPackage(),
       new DocumentPickerPackage(),
+      new RNFetchBlobPackage(),
+      new RNFSPackage(),
       new ImagePickerPackage(),
+      new RCTPdfView(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new SvgPackage(),

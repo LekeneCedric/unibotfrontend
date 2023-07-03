@@ -70,7 +70,7 @@ export default function AddPiece ({onDocumentPick}:Props){
     setIsLoading(true);
     try {
       const data = new FormData();
-      data.append('name',name);
+      data.append('name',"piece");
       data.append('type_piece_id',selectedType);
       data.append('file',{
         uri: previewUri,
@@ -162,8 +162,6 @@ export default function AddPiece ({onDocumentPick}:Props){
         closeOnTouchOutside={false}
         closeOnHardwareBackPress={false}/>
       <View>
-        <Text style={styles.intitule}>{t('name')}</Text>
-        <CustomTextInput placeholder={t('name')} onChangeText={(newName)=>{setName(newName)}}/>
         <Text style={styles.intitule}>type de requete</Text>
         <View style={styles.pickerContainer}>
           <Picker selectedValue={selectedType}
@@ -181,12 +179,12 @@ export default function AddPiece ({onDocumentPick}:Props){
                 {
                   if (item.id === piece_id)
                   {
-                    return <Picker.Item fontFamily={fontFamily.ysabeauText} label={item.name} value={item.id} />
+                    return <Picker.Item style={{fontFamily: fontFamily.ysabeauText}} label={item.name} value={item.id} />
                   }
                 }
                 else
                 {
-                  return <Picker.Item fontFamily={fontFamily.ysabeauText} label={item.name} value={item.id} />
+                  return <Picker.Item style={{fontFamily: fontFamily.ysabeauText}} label={item.name} value={item.id} />
                 }
               }
                 )

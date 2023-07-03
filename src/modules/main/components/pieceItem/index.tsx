@@ -13,14 +13,18 @@ import { removePiece } from "../../../../redux/reducers/pieceSlice";
 import { useAppDispatch, useAppSelector } from "../../../../../hooks";
 import AwesomeAlert from "react-native-awesome-alerts";
 import { useNavigation } from "@react-navigation/native";
+import colors from "../../../shared/theme/colors";
+import moment from "moment/moment";
+import downloadFiles from "../../../shared/utils/downloadFile";
 
 interface props extends IPiece{
 }
-const PieceItem:React.FC<props> = ({ id ,name,types, media})=>{
+const PieceItem:React.FC<props> = ({ id ,name, media,created_at})=>{
   const dispatch = useAppDispatch();
   const navigation = useNavigation();
   const [token,setToken] = useState(useAppSelector(state=>state.auth.userToken));
   const [showAlert,setShowAlert] = useState(false);
+  const [parseDate,setParseDate] = useState('');
   const deletePiece = (id:number)=>{
     DELETE(`${ROUTES.V1.USER.PIECE.DELETE}`,id,token)
       .then(res=>
@@ -40,6 +44,7 @@ const PieceItem:React.FC<props> = ({ id ,name,types, media})=>{
           }
           return res.json();
         }
+
       })
       .then(res=>{
         // console.warn(res);
@@ -50,6 +55,9 @@ const PieceItem:React.FC<props> = ({ id ,name,types, media})=>{
       })
       .finally(()=>{});
   }
+  useEffect(()=>{
+    setParseDate(`${new Date(created_at!).getDay()+1}/ ${new Date(created_at!).getMonth()} / ${new Date(created_at!).getFullYear()}`);
+  },[]);
   return (
     <View style={styles.container}>
       <AwesomeAlert
@@ -68,23 +76,28 @@ const PieceItem:React.FC<props> = ({ id ,name,types, media})=>{
       <Icon style={styles.icon1} name={Icons.MAIN.PIECES.DOCUMENT} size={widthPercentageToDP('7%')} color={Colors.primary}/>
       <View style={styles.content}>
         <Text style={[styles.title]}>{name}</Text>
+        <Text style={styles.typePiece}>{moment(parseDate,'DD/MM/YYYY').format('MMMM Do YYYY')}</Text>
       </View>
       <View style={styles.iconRightContainer}>
         <TouchableOpacity onPress={() => {
+          downloadFiles([`${media.filePath.slice(1)}`], '').then(() => {})
+        }}>
+          <Icon name={'download'} size={widthPercentageToDP('6%')} color={colors.gray} />
+        </TouchableOpacity>
+        <TouchableOpacity  onPress={() => {
           if (media.filePath.includes('pdf')) {
-            const url =`${storageBackend}/${media.filePath}`;
+            const url =`${storageBackend}${media.filePath}`;
             Linking.openURL(url)
           } else {
             //@ts-ignore
-            navigation.navigate('preview_document', { uri: `${storageBackend}/${media.filePath}`, type: "image/png" })
+            navigation.navigate('preview_document', { uri: `${storageBackend}${media.filePath}`, type: "image/png" })
           }
         }}>
           <Icon name={Icons.MAIN.PIECES.SEE} size={widthPercentageToDP('6%')} color={Colors.primary}/>
         </TouchableOpacity>
         <TouchableOpacity
           style={{marginRight:widthPercentageToDP('2%')}}
-          onPress={()=>{setShowAlert(true)}}
-        >
+          onPress={()=>{setShowAlert(true)}}>
           <Icon name={Icons.MAIN.PIECES.DELETE} size={widthPercentageToDP('6%')} color={Colors.danger}/>
         </TouchableOpacity>
       </View>

@@ -8,22 +8,22 @@ import {
 import Colors from "../../../../../shared/theme/colors";
 import fontFamily from "../../../../../shared/theme/fontFamily";
 
-const styles =  StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems:'center',
+    alignItems: 'center',
   },
   intitule: {
-    marginTop:hp('2%'),
-    marginBottom:hp('1%'),
-    fontFamily:fontFamily.ysabeauBold,
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
+    fontFamily: fontFamily.ysabeauBold,
   },
   pickerContainer: {
-    padding:wp('1%'),
-    width:wp('80%'),
-    fontFamily:fontFamily.ysabeauText,
-    backgroundColor:Colors.light,
-    borderRadius:wp('2%'),
+    padding: wp('1%'),
+    width: wp('90%'),
+    fontFamily: fontFamily.ysabeauText,
+    backgroundColor: Colors.light,
+    borderRadius: wp('2%'),
     elevation: 8,
     shadowColor: '#000',
     shadowOffset: {
@@ -36,19 +36,19 @@ const styles =  StyleSheet.create({
   documentPreview: {
     width: widthPercentageToDP('30%'),
     height: heightPercentageToDP('30%'),
-    alignSelf:'center',
-    marginTop:hp('2%'),
+    alignSelf: 'center',
+    marginTop: hp('2%'),
     borderRadius: 10
   },
   uploadButton: {
-    flexDirection:'row',
-    alignItems:'center',
-    padding:wp('1%'),
-    width:wp('45%'),
-    fontFamily:fontFamily.ysabeauText,
-    backgroundColor:Colors.light,
-    borderRadius:wp('2%'),
-    elevation: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 20,
+    width: wp('90%'),
+    fontFamily: fontFamily.ysabeauText,
+    backgroundColor: Colors.light,
+    borderRadius: wp('2%'),
+    elevation: 2,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -57,28 +57,27 @@ const styles =  StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
-  buttonText:{
+  buttonText: {
     fontFamily: fontFamily.ysabeauText,
-    color:Colors.light
+    color: Colors.light
   },
   validationButton: {
-    width:wp('80%'),
-    backgroundColor:Colors.primary,
-    marginTop:hp('5%'),
-    alignItems:'center',
-    padding:wp('4%'),
-    borderRadius:wp('2%')
+    width: wp('80%'),
+    backgroundColor: Colors.primary,
+    marginTop: hp('5%'),
+    alignItems: 'center',
+    padding: wp('4%'),
+    borderRadius: wp('2%')
   },
   uploadText: {
-    fontFamily:fontFamily.ysabeauBold,
+    fontFamily: fontFamily.ysabeauBold,
   },
   picker: {
-
-    color:Colors.primary
+    fontFamily: fontFamily.ysabeauText,
+    color: Colors.primary
   },
   pickerItem: {
-    fontFamily:fontFamily.ysabeauText,
-
+    fontFamily: fontFamily.ysabeauText,
   }
 });
 export default styles;

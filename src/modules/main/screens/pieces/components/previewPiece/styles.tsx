@@ -4,7 +4,20 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 
 const styles = StyleSheet.create({
   container: {
+    position: 'relative',
     backgroundColor:Colors.black
+  },
+  icon: {
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000000,
+    width: wp('10%'),
+    height: hp('5%'),
+    borderRadius: wp('10%'),
+    backgroundColor: Colors.light,
+    top:hp('2%'),
+    left:wp('2%'),
   },
   image: {
     width:wp('100%'),

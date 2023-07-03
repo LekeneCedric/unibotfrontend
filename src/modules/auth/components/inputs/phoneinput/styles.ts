@@ -8,13 +8,14 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 const styles = StyleSheet.create({
   container: {
     marginTop: hp('1%'),
-    padding: wp('1%'),
+    margin: wp('3%'),
+    padding: wp('0%'),
     width: wp('80%'),
     backgroundColor: Colors.light,
     borderRadius: wp('2%'),
     flexDirection: 'row',
     alignItems: 'center',
-    elevation: 8,
+    elevation: 2,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

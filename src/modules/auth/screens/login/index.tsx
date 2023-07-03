@@ -14,15 +14,13 @@ import routes from "../../../../api/routes";
 import AwesomeAlert from "react-native-awesome-alerts";
 import { useAppDispatch, useAppSelector } from "../../../../../hooks";
 import { setCredential, setUser } from "../../../../redux/reducers/authSlice";
+import * as yup from 'yup';
+import { Formik } from "formik";
+import { widthPercentageToDP } from "react-native-responsive-screen";
 
-interface Iuser {
-  email?:string,
-  password?:string
-}
 export default function Login(): JSX.Element {
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
-  const [userData,setUserData] = useState<Iuser>({});
   const [isLoading,setIsLoading] = useState(false)
   const [showError,setShowError] = useState(false);
   const [errorMessage,setErrorMessage] = useState("")
@@ -32,10 +30,10 @@ export default function Login(): JSX.Element {
     // @ts-ignore
     navigation.navigate(route);
   };
-  const signIn = ()=>{
+  const signIn = (form: {email:string, password:string})=>{
     const data = new FormData();
-    data.append('email',userData.email);
-    data.append('password',userData.password);
+    data.append('email',form.email);
+    data.append('password',form.password);
     setIsLoading(true);
     POST(routes.V1.AUTH.LOGIN,data)
       .then(response=>{
@@ -64,6 +62,7 @@ export default function Login(): JSX.Element {
         dispatch(setUser(responseData.user));
       })
       .catch((err)=>{
+        console.log(err)
         setErrorMessage(err.message)
         setShowError(true);
       })
@@ -74,6 +73,16 @@ export default function Login(): JSX.Element {
         }
       )
   }
+  const LoginValidationSchema = yup.object().shape({
+    email: yup
+      .string()
+      .email(`${t('auth.login.validation.email.invalid')}`)
+      .required(`${t('auth.login.validation.email.required')}`),
+    password: yup
+      .string()
+      .min(8, ({min}) => `${t('auth.login.validation.password.invalid1')} ${min} ${t('auth.login.validation.password.invalid2')}`)
+      .required(`${t('auth.login.validation.password.required')}`)
+  })
   useEffect(()=>{
     i18n.changeLanguage(currentLang);
   },[]);
@@ -108,26 +117,63 @@ export default function Login(): JSX.Element {
       </View>
 
       <View style={styles.middle}>
-        <CustomTextInput placeholder={'email'} onChangeText={(email)=>{setUserData({...userData,email:email})}} />
-        <CustomPasswordInput placeholder={t('password')} onChangeText={(password)=>{setUserData({...userData,password:password})}}/>
-        <TouchableOpacity style={styles.forgetPassButton}>
-          <Text style={styles.forgetPassText}>Forget password ?</Text>
-        </TouchableOpacity>
+        <Formik
+          validationSchema={LoginValidationSchema}
+          initialValues={{email: '', password: ''}}
+          onSubmit={values => {signIn(values)}}
+          >
+          {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              errors,
+              isValid, }) => (
+                <>
+                  <CustomTextInput
+                    placeholder={'email'}
+                    onChangeText={handleChange('email')}
+                    onBlur={handleBlur('email')}
+                    value={values.email}
+                    keyboardType={'email-address'}
+                    status = {errors.email}
+                    forForm={true}
+                  />
+                  {errors.email &&
+                    <Text style={{ marginLeft: widthPercentageToDP('3%'), color: 'red' }}>{errors.email}</Text>
+                  }
+                  <CustomPasswordInput
+                    placeholder={t('password')}
+                    onChangeText={handleChange('password')}
+                    onBlur={handleBlur('password')}
+                    value={values.password}
+                    status={errors.password}
+                    forForm={true}
+                  />
+                  {errors.password &&
+                    <Text style={{ marginLeft: widthPercentageToDP('3%'), color: 'red' }}>{errors.password}</Text>
+                  }
+                  <TouchableOpacity style={styles.forgetPassButton}>
+                    <Text style={styles.forgetPassText}>Forget password ?</Text>
+                  </TouchableOpacity>
+                  <View style={styles.bottom}>
+                    <View>
+                      <Simplebutton disabled={!isValid}  text={t("connextion ")} func={handleSubmit} />
+                      {/*<Googlebutton text={t("sign_with_google")} func={() => {}} />*/}
+                    </View>
+                    <View style={styles.already}>
+                      <Text>{t("notregister")}</Text>
+                      <TouchableOpacity onPress={() => {
+                        navTo('register')
+                      }}><Text style={styles.signInLink}>{t("register")}</Text></TouchableOpacity>
+                    </View>
+                  </View>
+                </>
+          )}
+        </Formik>
       </View>
 
-      <View style={styles.bottom}>
-        <View>
-          <Simplebutton text={t("connextion ")} func={signIn} />
-          <Googlebutton text={t("sign_with_google")} func={() => {
-          }} />
-        </View>
-        <View style={styles.already}>
-          <Text>{t("notregister")}</Text>
-          <TouchableOpacity onPress={() => {
-            navTo('register')
-          }}><Text style={styles.signInLink}>{t("register")}</Text></TouchableOpacity>
-        </View>
-      </View>
+
     </View>
   );
 }

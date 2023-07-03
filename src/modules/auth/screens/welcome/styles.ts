@@ -46,10 +46,10 @@ const styles = StyleSheet.create({
     width:wp('80%'),
     backgroundColor:Colors.primary,
     marginTop:hp('5%'),
+    alignSelf: 'center',
     alignItems:'center',
     padding:wp('4%'),
     borderRadius:wp('2%')
-
   },
   buttonText:{
     fontFamily: fontFamily.ysabeauBold,

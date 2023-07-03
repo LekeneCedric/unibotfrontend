@@ -18,8 +18,9 @@ const styles = StyleSheet.create({
     marginTop:hp('8%'),
   },
   bottom:{
+    alignSelf: 'center',
     width:wp('80%'),
-    marginTop:hp('8%')
+    // marginTop:hp('8%')
   },
   welcomeTitle:{
     fontFamily:fontFamily.ysabeauBold,

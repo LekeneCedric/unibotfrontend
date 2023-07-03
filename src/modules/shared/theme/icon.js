@@ -11,12 +11,13 @@ const Icons = {
   MAIN: {
     TABS: {
       ASSISTANT: {
+        RESET: 'backup-restore',
         ACTIVE: 'robot',
         INACTIVE:'robot-outline',
       },
       REQUEST: {
         ACTIVE: 'newspaper-variant',
-        INACTIVE: 'newspaper-variant-outline'
+        INACTIVE: 'newspaper-variant-outline',
       },
       PIECES: {
         ACTIVE: 'badge-account',
@@ -36,6 +37,7 @@ const Icons = {
     REQUESTS: {
       DOCUMENT: 'file-document',
       REQUEST: 'comment-edit',
+      FILTER: 'filter-menu',
       DOWNLOAD: 'download',
       information: 'information',
       check: 'check',

@@ -17,6 +17,34 @@
     "sign_with_google": "Connexion avec Google",
     "signup_with_google": "Inscription avec Google",
     "phonenumber": "entrez le numero de telephone",
-    "isconnexionmessage": "verification des informations"
+    "isconnexionmessage": "verification des informations",
+    "auth": {
+        "login": {
+            "validation": {
+                "name": {
+                    "invalid1": "Le nom doit etre au moins",
+                    "invalid2": "characteres",
+                    "required": "Le nom est obligatoire"
+                },
+                "phone1": {
+                    "invalid": "Entrez un numero de telephone valide Ex: +237 650225213",
+                    "required": "Le numero de telephone est obligatoire"
+                },
+                "email": {
+                    "invalid": "S'il vous plait entrez une adresse email valide",
+                    "required": "Votre adresse email est obligatoire"
+                },
+                "password": {
+                    "invalid1": "Le mot de passe doit etre au moins",
+                    "invalid2": "characteres",
+                    "required": "Le mot de passe est obligatoire"
+                },
+                "password_confirmation": {
+                    "invalid": "Les mots de passe ne correspondent pas",
+                    "required": "La confirmation du mot de passe est obligatoire"
+                }
+            }
+        }
+    }
 
 }

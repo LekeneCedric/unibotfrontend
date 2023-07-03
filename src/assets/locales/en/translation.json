@@ -17,5 +17,33 @@
     "sign_with_google": "Sign in with Google",
     "signup_with_google": "Sign up with Google",
     "phonenumber": "enter phone number",
-    "isconnexionmessage": "verification of information"
+    "isconnexionmessage": "verification of information",
+    "auth": {
+        "login": {
+            "validation": {
+                "name": {
+                    "invalid1": "Please enter valid name , it should be at least ",
+                    "invalid2": "characters",
+                    "required": "Name is Required"
+                },
+                "phone1": {
+                    "invalid": "Please enter valid phone number Ex: +237 650225213",
+                    "required": "Phone number is Required"
+                },
+                "email": {
+                    "invalid": "Please enter valid email",
+                    "required": "Email Address is Required"
+                },
+                "password": {
+                    "invalid1": "Password must be at least",
+                    "invalid2": "characters",
+                    "required": "Password is required"
+                },
+                "password_confirmation": {
+                    "invalid": "Password confirmation must be the same as password",
+                    "required": "Password confirmation is required"
+                }
+            }
+        }
+    }
 }

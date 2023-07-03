@@ -6,8 +6,8 @@ import fontFamily from "../../../../../shared/theme/fontFamily";
 const styles = StyleSheet.create({
   container: {
     backgroundColor:Colors.light,
-    padding: wp('2%'),
-    elevation: 8,
+    padding: wp('1%'),
+    elevation: 2,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

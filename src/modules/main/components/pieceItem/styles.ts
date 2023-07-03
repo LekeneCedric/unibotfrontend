@@ -5,9 +5,9 @@ import Colors from "../../../shared/theme/colors";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:Colors.light,
+    backgroundColor: Colors.light,
     padding: wp('2%'),
-    elevation: 8,
+    elevation: 2,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -15,26 +15,26 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    margin:hp('1%'),
-    alignItems:'center',
-    borderRadius:wp('2%'),
-    flexDirection:'row'
+    margin: hp('1%'),
+    alignItems: 'center',
+    borderRadius: wp('2%'),
+    flexDirection: 'row'
   },
   typePiece: {
-    fontFamily:fontFamily.ysabeauText,
-    color:Colors.gray
+    fontFamily: fontFamily.ysabeauText,
+    color: Colors.gray
   },
   iconRightContainer: {
-    position:'absolute',
+    position: 'absolute',
     right: 0,
-    width:wp('15%'),
-    justifyContent:'space-between',
+    width: wp('30%'),
+    justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center'
   },
   content: {
     padding: wp('2%'),
-    flexDirection:'column'
+    flexDirection: 'column'
   },
   title: {
     fontFamily: fontFamily.ysabeauText

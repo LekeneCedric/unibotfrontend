@@ -14,6 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import moment from "moment";
 import routes from "../../../../../../api/routes";
 import { removeRequest } from "../../../../../../redux/reducers/requestSlice";
+import formatDate from "../../../../../shared/utils/formatDate";
 
 interface props extends IRequest{}
 const RequestItem : React.FC<props> = ({id, types, created_at})=>{
@@ -21,10 +22,25 @@ const RequestItem : React.FC<props> = ({id, types, created_at})=>{
   const navigation = useNavigation();
   const [token,setToken] = useState(useAppSelector(state=>state.auth.userToken));
   const [showAlert,setShowAlert] = useState(false);
-  const [parseDate,setParseDate] = useState('');
   const DeleteRequest = ()=>{
     DELETE(`${routes.V1.USER.REQUEST.DELETE}`,id!,token)
-      .then(res=>res.json())
+      .then(res=>{
+        {
+          if (!res.ok) {
+            if (res.status===500) {
+              throw new Error('Internal Server Error');
+            }
+            else if ([400,401,403,404].includes(res.status))
+            {
+              throw new Error('error occur when try to delete');
+            }
+            else {
+              throw new Error('Network response was not ok');
+            }
+          }
+          return res.json();
+        }
+      })
       .then(res=>{
         dispatch(removeRequest(id!))
       })
@@ -35,9 +51,6 @@ const RequestItem : React.FC<props> = ({id, types, created_at})=>{
         setShowAlert(false);
       })
   }
-  useEffect(()=>{
-    setParseDate(`${new Date(created_at!).getDay()+1}/ ${new Date(created_at!).getMonth()} / ${new Date(created_at!).getFullYear()}`);
-  },[]);
   return (
     <View>
       <View style={styles.container}>
@@ -57,7 +70,7 @@ const RequestItem : React.FC<props> = ({id, types, created_at})=>{
         <Icon style={styles.icon1} name={Icons.MAIN.REQUESTS.REQUEST} size={widthPercentageToDP('7%')} color={Colors.primary}/>
         <View style={styles.content}>
           <Text style={[styles.title]}>{types.name}</Text>
-          <Text style={styles.typePiece}>{moment(parseDate,'DD/MM/YYYY').format('MMMM Do YYYY, h:mm:ss a')}</Text>
+          <Text style={styles.typePiece}>{formatDate(created_at)}</Text>
         </View>
         <View style={styles.iconRightContainer}>
           <TouchableOpacity onPress={()=>{

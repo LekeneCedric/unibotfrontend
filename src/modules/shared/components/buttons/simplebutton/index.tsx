@@ -6,11 +6,12 @@ import { useTranslation } from "react-i18next";
 import { GestureResponderEvent } from "react-native/Libraries/Types/CoreEventTypes";
 
 type props = {
-  text:string,
-  func:((event: GestureResponderEvent) => void) | undefined;
+  disabled?: boolean,
+  text: string,
+  func: (event: GestureResponderEvent) => void;
 }
-const Simplebutton:React.FC<props> = ({text,func})=>{
-  return <TouchableOpacity onPress={func} style={styles.button} >
+const Simplebutton:React.FC<props> = ({text,func, disabled})=>{
+  return <TouchableOpacity onPress={func} style={styles.button} disabled={disabled ? disabled : false} >
     <Text style={styles.buttonText}>{text}</Text>
   </TouchableOpacity>
 }

@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { IMessage } from "react-native-gifted-chat";
+import { act } from "react-test-renderer";
 
 const botAvatar = require("../../assets/images/chatbot/chatbot.jpg");
 interface chatbotState  {
@@ -26,6 +27,12 @@ export const chatbotSlice = createSlice({
   name: 'chatbot',
   initialState,
   reducers: {
+    loadMesssages: (state, action: PayloadAction<IMessage[]>) => {
+      state.messages = action.payload;
+    },
+    reinitializeMessages: (state) => {
+      state.messages = [];
+    },
     addMessage: (state, action: PayloadAction<IMessage[]>) => {
       state.messages = [...action.payload,...state.messages];
     },
@@ -40,5 +47,5 @@ export const chatbotSlice = createSlice({
     },
   }
 });
-export const { sendBotResponse,addMessage} = chatbotSlice.actions;
+export const { loadMesssages, reinitializeMessages, sendBotResponse,addMessage} = chatbotSlice.actions;
 export default chatbotSlice.reducer;

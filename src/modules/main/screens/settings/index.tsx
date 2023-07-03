@@ -49,7 +49,10 @@ export default function Settings()
           <Text>20V2060</Text>
         </View>
         <View style={styles.editButtonContainer}>
-          <Simplebutton text={'Edit profile'} func={()=>{}}/>
+          <Simplebutton text={'Edit profile'} func={()=>{
+            //@ts-ignore
+            navigation.navigate('editProfile');
+          }}/>
         </View>
       </View>
       <View>
