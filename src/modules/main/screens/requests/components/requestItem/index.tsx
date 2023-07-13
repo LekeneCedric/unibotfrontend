@@ -15,6 +15,7 @@ import moment from "moment";
 import routes from "../../../../../../api/routes";
 import { removeRequest } from "../../../../../../redux/reducers/requestSlice";
 import formatDate from "../../../../../shared/utils/formatDate";
+import { useTranslation } from "react-i18next";
 
 interface props extends IRequest{}
 const RequestItem : React.FC<props> = ({id, types, created_at})=>{
@@ -22,6 +23,8 @@ const RequestItem : React.FC<props> = ({id, types, created_at})=>{
   const navigation = useNavigation();
   const [token,setToken] = useState(useAppSelector(state=>state.auth.userToken));
   const [showAlert,setShowAlert] = useState(false);
+  const {t, i18n} = useTranslation();
+  const currentLang = i18n.language;
   const DeleteRequest = ()=>{
     DELETE(`${routes.V1.USER.REQUEST.DELETE}`,id!,token)
       .then(res=>{
@@ -56,9 +59,9 @@ const RequestItem : React.FC<props> = ({id, types, created_at})=>{
       <View style={styles.container}>
         <AwesomeAlert
           show={showAlert}
-          title={'delete'}
-          message={`would you delete this request ?`}
-          showProgress={true}
+          title={currentLang === 'en' ? 'Delete' : 'Supprimer'}
+          message={currentLang === 'en' ? 'Would you delete this request ?' : 'Voulez vous supprimer cette requete ?'}
+          showProgress={false}
           showCancelButton={true}
           showConfirmButton={true}
           closeOnTouchOutside={false}

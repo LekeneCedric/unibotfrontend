@@ -21,6 +21,8 @@ import RNFetchBlob from 'react-native-fetch-blob'
 import routes from "../../../../../../api/routes";
 import downloadFiles from "../../../../../shared/utils/downloadFile";
 import AwesomeAlert from "react-native-awesome-alerts";
+import downloadFile from "../../../../../shared/utils/downloadFile";
+import { useTranslation } from "react-i18next";
 
 const RequestDetail: React.FC<{}> = ({}) => {
   const { fs } = RNFetchBlob;
@@ -35,16 +37,11 @@ const RequestDetail: React.FC<{}> = ({}) => {
   const [downloadFinish,setDownloadFinish] = useState(false);
   //@ts-ignore
   const { request_id } = route.params;
-
+  const {t, i18n} = useTranslation();
+  const currentLang = i18n.language;
   const donwloaRequest = async ()=>{
     setIsDownload(true)
-    GET(`${routes.V1.USER.REQUEST.DOWNLOAD}/${request_id}`,token)
-      .then(res=>res.json())
-      .then(res => {
-        let files = res.files;
-        downloadFiles(files,requestDetail.types?.name!);
-      })
-      .catch(err=>{console.log(err)})
+    downloadFile(request_id,token).then(() => {})
       .finally(()=>{
         setDownloadFinish(true)
         setIsDownload(false);
@@ -52,31 +49,6 @@ const RequestDetail: React.FC<{}> = ({}) => {
           setDownloadFinish(false)
         },2000)
       })
-    // const { dirs } = RNFetchBlob.fs;
-    // const downloadDir = Platform.OS === 'ios' ? dirs.DocumentDir : dirs.DownloadDir;
-    // const fileExtension = '.zip';
-    // const fileName = `request_${Date.now()}${fileExtension}`;
-    //   RNFetchBlob.config({
-    //     headers: {
-    //       Accept: "application/json",
-    //       'Authorization': `Bearer ${token}`,
-    //       "Content-Type": "application/json",
-    //     },
-    //     fileCache: true,
-    //     addAndroidDownloads: {
-    //       useDownloadManager: true,
-    //       notification: true,
-    //       title: fileName,
-    //       path: `${downloadDir}/${fileName}`,
-    //     }
-    //   })
-    //   .fetch('GET',`${urlBackend}${routes.V1.USER.REQUEST.DOWNLOAD}/${request_id}`)
-    //   .then((res:any)=>{
-    //     console.warn('File downloaded', res.path());
-    //   })
-    //   .catch((err:any)=>{
-    //     console.warn('error download file : ',err)
-    //   })
   }
   useFocusEffect(
     useCallback(()=>{
@@ -96,7 +68,7 @@ const RequestDetail: React.FC<{}> = ({}) => {
             fontFamily: fontFamily.ysabeauMedium,
             fontSize: fontSize.smallTitle
           },
-          headerTitle: ()=><Text style={styles.title}><Text style={styles.labelTitle}> Objet : </Text>{res.types?.name!}</Text>,
+          headerTitle: ()=><Text style={styles.title}><Text style={styles.labelTitle}> {currentLang === 'en' ? 'Object' : 'Objet'} </Text>{res.types?.name!}</Text>,
           headerTitleAlign: "center"
         });
         console.log(res);
@@ -114,7 +86,7 @@ const RequestDetail: React.FC<{}> = ({}) => {
       <AwesomeAlert
         show={downloadFinish}
         title={'Operation'}
-        message={'Le telechargement de votre requete est termine'}
+        message={currentLang === 'en' ? 'The download of your request is complete' : 'Le telechargement de votre requete est termine'}
         showProgress={false}
         closeOnTouchOutside={false}
         closeOnHardwareBackPress={false}
@@ -123,7 +95,7 @@ const RequestDetail: React.FC<{}> = ({}) => {
         isLoading ? (
             <View>
               <ActivityIndicator size={widthPercentageToDP("10%")} color={Colors.primary} />
-              <Text style={styles.textLoader}>loading request & pieces</Text>
+              <Text style={styles.textLoader}>{currentLang === 'en' ? 'Loading request & Pieces' : 'Chargement de la requete et des pieces jointes'}</Text>
             </View>
           )
           :
@@ -131,12 +103,14 @@ const RequestDetail: React.FC<{}> = ({}) => {
             <>
               <View>
                 <Text style={styles.description}>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Loremen an unknown printer took a galley of type and scrambled it to make a type specimen book
+                  {currentLang === 'en' ? 'Consult the details of your request, the progress of the latter, the attachments; if the required documents are not presented, import them then download the latter.' : 'Consulter les details de votre requete, l\'etat d\'avancement de cette derniere , les pieces jointes ; si les pieces requises ne sont pas presentes , importer les puis telechargez cette derniere.'}
+                  {currentLang === 'en' ? 'Your request and attachments will be uploaded to the folder' : 'Votre requete et les pieces jointes seront telechargees dans le dossier'}
+                   <Text style={{fontFamily: fontFamily.ysabeauBold}}>{currentLang === 'en' ? 'Download' : 'Telecharger'}</Text> {currentLang === 'en' ? 'from your phone as a zip file' : 'de votre telephone sous la forme d\'un fichier zip'}  <Text style={{fontFamily: fontFamily.ysabeauBold}}>{currentLang === 'en' ? 'request_name' : 'nom_requete'}.zip</Text>
                 </Text>
               </View>
               <View>
                 <View style={styles.section}>
-                  <Text style={[styles.labelTitle, { marginTop: heightPercentageToDP("2%") }]}>Requete principale</Text>
+                  <Text style={[styles.labelTitle, { marginTop: heightPercentageToDP("2%") }]}>{currentLang === 'en' ? 'Principal request' : 'Requete principale'}</Text>
                   <TouchableOpacity>
                     <Icon name={Icons.MAIN.REQUESTS.information} size={widthPercentageToDP('4%')} color={Colors.primary} />
                   </TouchableOpacity>
@@ -147,7 +121,7 @@ const RequestDetail: React.FC<{}> = ({}) => {
               </View>
               <View>
                 <View style={styles.section}>
-                  <Text style={[styles.labelTitle, { marginTop: heightPercentageToDP("2%") }]}>Pieces jointes</Text>
+                  <Text style={[styles.labelTitle, { marginTop: heightPercentageToDP("2%") }]}>{currentLang === 'en' ? 'Attachments' : 'Pieces jointes'}</Text>
                   <TouchableOpacity>
                     <Icon name={Icons.MAIN.REQUESTS.information} size={widthPercentageToDP('4%')} color={Colors.primary} />
                   </TouchableOpacity>
@@ -161,23 +135,24 @@ const RequestDetail: React.FC<{}> = ({}) => {
                 requestDetail.is_ok ? (
                       !isDownload ? (
                           <View>
-                            <Simplebutton text={"Download my request files"} func={donwloaRequest}/>
+                            <Simplebutton text={currentLang === 'en' ? 'Download my request' : 'Telecharger ma requete'} func={donwloaRequest}/>
                           </View>
                       )
                         : (
                         <View>
                           <ActivityIndicator size={widthPercentageToDP("10%")} color={Colors.primary} />
-                          <Text style={styles.textLoader}>Telechargement de la requete</Text>
+                          <Text style={styles.textLoader}>{currentLang === 'en' ? 'Download of the request' : 'Telechargement de la requete'}</Text>
                         </View>
                       )
                 ):
                   (
                     <View>
                       <Text style={styles.textwarning}>
-                        sorry but you cannot download your request until the attachments are complete, please fill in your documents and try again
+                        {currentLang === 'en' ? 'sorry but you cannot download your request until the attachments are complete, please fill in your documents and try again' : 'désolé mais vous ne pouvez pas télécharger votre demande tant que les pièces jointes ne sont pas complètes, veuillez remplir vos documents et réessayer'}
+
                       </Text>
                       <View>
-                        <Simplebutton text={"Refresh"} func={()=>{setRefreshKey((prev)=>prev+1)}}/>
+                        <Simplebutton text={currentLang === 'en' ? 'Refresh' : 'Rechargement'} func={()=>{setRefreshKey((prev)=>prev+1)}}/>
                       </View>
                     </View>
 

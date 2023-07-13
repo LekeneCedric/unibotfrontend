@@ -16,6 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "../../../shared/theme/colors";
 import moment from "moment/moment";
 import downloadFiles from "../../../shared/utils/downloadFile";
+import { useTranslation } from "react-i18next";
 
 interface props extends IPiece{
 }
@@ -25,6 +26,8 @@ const PieceItem:React.FC<props> = ({ id ,name, media,created_at})=>{
   const [token,setToken] = useState(useAppSelector(state=>state.auth.userToken));
   const [showAlert,setShowAlert] = useState(false);
   const [parseDate,setParseDate] = useState('');
+  const {t, i18n} = useTranslation();
+  const currentLang = i18n.language;
   const deletePiece = (id:number)=>{
     DELETE(`${ROUTES.V1.USER.PIECE.DELETE}`,id,token)
       .then(res=>
@@ -62,9 +65,8 @@ const PieceItem:React.FC<props> = ({ id ,name, media,created_at})=>{
     <View style={styles.container}>
       <AwesomeAlert
         show={showAlert}
-        title={'delete'}
-        message={`would you delete this piece ? ${name}`}
-        showProgress={true}
+        title={currentLang === 'en' ? 'Delete' : 'Supprimer'}
+        message={currentLang === 'en' ? 'Would you delete this piece ?' : 'Voulez vous supprimer cette piece ?'}
         showCancelButton={true}
         showConfirmButton={true}
         closeOnTouchOutside={false}

@@ -2,11 +2,13 @@ import { StyleSheet } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Colors from "../../../shared/theme/colors";
 import fontFamily from "../../../shared/theme/fontFamily";
+import colors from "../../../shared/theme/colors";
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.light,
     paddingLeft: wp('2%'),
-    elevation: 5,
+    elevation: 2,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

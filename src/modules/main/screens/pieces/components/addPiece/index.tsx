@@ -34,7 +34,7 @@ export default function AddPiece ({onDocumentPick}:Props){
     'fiche_preinscription',
     'acte_naissance'
   ]},[]);
-  const {t} = useTranslation();
+  const {t, i18n} = useTranslation();
   const navigation = useNavigation();
   const token = useAppSelector(state=>state.auth.userToken);
   const [typesPieces,setTypesPieces] = useState<ITypePiece[]>([]);
@@ -46,6 +46,7 @@ export default function AddPiece ({onDocumentPick}:Props){
   const [selectedType,setSelectedType] = useState<number>(0);
   const [documentName, setDocumentName] = useState<string>('');
   const [documentType, setDocumentType] = useState<string>('');
+  const currentLang = i18n.language;
   const pickDocument = async () => {
     try {
       setLoading(true);
@@ -117,7 +118,7 @@ export default function AddPiece ({onDocumentPick}:Props){
         fontSize:fontSize.smallTitle
       },
       //@ts-ignore
-      headerTitle:route.params!=undefined?`Add ${route.params.name}`:'add new piece',
+      headerTitle:currentLang === 'en' ? route.params!=undefined?`Add ${route.params.name}`:'add new piece' : route.params!=undefined?`Ajouter ${route.params.name}`:'Ajouter nouvelle piece' ,
       headerTitleAlign:'center',
       headerLeft:()=>(
         <TouchableOpacity style={{marginLeft:widthPercentageToDP('2%')}} onPress={()=>navigation.goBack()}>
@@ -125,7 +126,7 @@ export default function AddPiece ({onDocumentPick}:Props){
         </TouchableOpacity>
       )
     })
-  },[navigation])
+  },[navigation,t])
   useEffect(()=>{
     setLoadType(true);
     GET(ROUTES.V1.USER.TYPE_PIECE.GET,token)
@@ -162,7 +163,7 @@ export default function AddPiece ({onDocumentPick}:Props){
         closeOnTouchOutside={false}
         closeOnHardwareBackPress={false}/>
       <View>
-        <Text style={styles.intitule}>type de requete</Text>
+        <Text style={styles.intitule}>{currentLang === 'en' ? 'request type' : 'Type de requete'}</Text>
         <View style={styles.pickerContainer}>
           <Picker selectedValue={selectedType}
                   onValueChange={(itemValue, itemIndex)=>{setSelectedType(itemValue)}}
@@ -191,7 +192,7 @@ export default function AddPiece ({onDocumentPick}:Props){
             }
           </Picker>
         </View>
-        <Text style={styles.intitule}>Selectionner le document</Text>
+        <Text style={styles.intitule}>{currentLang === 'en' ? 'Select document' : 'Selectionner le document'}</Text>
         <TouchableOpacity style={styles.uploadButton} onPress={pickDocument}>
           <Icon name={Icons.MAIN.PIECES.DOCUMENT} size={widthPercentageToDP('5%')} color={Colors.primary} />
           {loading ? (
@@ -199,7 +200,7 @@ export default function AddPiece ({onDocumentPick}:Props){
           ) : (
             <>
               <Text style={styles.uploadText}>
-                Importer un document
+                {currentLang === 'en' ? 'Import document' : 'Importer un document'}
               </Text>
             </>
           )}

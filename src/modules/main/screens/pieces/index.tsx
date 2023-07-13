@@ -1,4 +1,12 @@
-import { ActivityIndicator, RefreshControl, SafeAreaView, ScrollView, TouchableOpacity, View, Modal } from "react-native";
+import {
+  ActivityIndicator,
+  Modal,
+  RefreshControl,
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity,
+  View
+} from "react-native";
 import styles from "./styles";
 import { AnimatedFAB, Portal, Searchbar } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
@@ -9,15 +17,16 @@ import { widthPercentageToDP } from "react-native-responsive-screen";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons from "../../../shared/theme/icon";
 import Colors from "../../../shared/theme/colors";
+import colors from "../../../shared/theme/colors";
 import PieceItem from "../../components/pieceItem";
 import IPiece from "../../../../models/piece.model";
 import { useAppDispatch, useAppSelector } from "../../../../../hooks";
 import ROUTES from "../../../../api/routes";
 import Text from "../../../shared/components/native/text";
-import { DELETE, GET } from "../../../../api/methods";
-import { loadPiece, removePiece } from "../../../../redux/reducers/pieceSlice";
-import colors from "../../../shared/theme/colors";
+import { GET } from "../../../../api/methods";
+import { loadPiece } from "../../../../redux/reducers/pieceSlice";
 import Simplebutton from "../../../shared/components/buttons/simplebutton";
+import { useTranslation } from "react-i18next";
 
 export default function Pieces()
 {
@@ -36,13 +45,11 @@ export default function Pieces()
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const [formats, setFormats] = useState<{name: string, isSelected: boolean}[]>([]);
   const [selectedFormatsName,setSelectedFormatsName] = useState<string[]>([]);
-
+  const {t, i18n} = useTranslation();
+  const currentLang = i18n.language;
   const filter = () => {
-    setPiecesFiltered(pieces);
-    console.warn('pieces',pieces);
-    console.warn('selectedRequestCategoriesId',selectedRequestCategoriesId);
-    console.warn('selectedFormatsName',selectedFormatsName);
-    const filterPieces = piecesFiltered.filter((piece:IPiece)=>{
+    // setPiecesFiltered(pieces);
+    const filterPieces = pieces.filter((piece:IPiece)=>{
       if (selectedRequestCategoriesId.length > 0 && selectedFormatsName.length > 0)
       {
         return (selectedRequestCategoriesId.includes(piece.type.categorie_piece_id!) && selectedFormatsName.includes(piece.media.extension))
@@ -123,6 +130,9 @@ export default function Pieces()
       }
     })
   },[navigation]);
+  useEffect(() => {
+    setPiecesFiltered(pieces);
+  },[pieces])
   useEffect(()=>{
     setIsLoading(true);
     GET(ROUTES.V1.USER.PIECE.GET,token)
@@ -157,7 +167,9 @@ export default function Pieces()
   },[dispatch,reload]);
   return <SafeAreaView style={styles.container}>
     <Searchbar
-      placeholder="Search"
+      placeholder={currentLang === 'en' ? 'Search' : 'Rechercher'}
+      placeholderTextColor={colors.gray}
+      iconColor={colors.gray}
       inputStyle={styles.searchBarInput}
       onChangeText={(searchText) => {setSearch(searchText)}}
       value={search}
@@ -180,7 +192,7 @@ export default function Pieces()
             <Icon name={Icons.back} style={{marginTop: 10}} size={40} color={Colors.primary} />
           </TouchableOpacity>
           <ScrollView style={styles.filterModalContainer}>
-            <Text style={styles.filterModalContainerTitle}> Quel categorie(s) de pieces ? </Text>
+            <Text style={styles.filterModalContainerTitle}> {currentLang === 'en' ? 'What categories of pieces ?' : 'Quel(s) categories de pieces'} </Text>
             <View style={{flexDirection: 'row',flexGrow: 1, flexWrap: 'wrap'}}>
               {
                 categoriesPieces.map((cat)=> {
@@ -195,7 +207,7 @@ export default function Pieces()
                 })
               }
             </View>
-            <Text style={styles.filterModalContainerTitle}> Quels formats ? </Text>
+            <Text style={styles.filterModalContainerTitle}> {currentLang === 'en' ? 'Which format ?' : 'Quel format ?'}</Text>
             <View style={{flexDirection: 'row',flexGrow: 1, flexWrap: 'wrap'}}>
               {
                 formats.map((format)=> {
@@ -210,7 +222,7 @@ export default function Pieces()
                 })
               }
             </View>
-            <Simplebutton  text={'Valider le filtre'} func={filter} />
+            <Simplebutton  text={currentLang === 'en' ? 'Filter validation' : 'Validation filtre'} func={filter} />
           </ScrollView>
         </Modal>
       </Portal>
@@ -219,7 +231,7 @@ export default function Pieces()
           (
             <View style={styles.loadContainer}>
               <ActivityIndicator size={widthPercentageToDP('8%')} />
-              <Text>Chargement des pieces</Text>
+              <Text>{currentLang === 'en' ? 'Loading pieces' : 'Chargement des pieces'}</Text>
             </View>
           ) :
           (
@@ -233,13 +245,17 @@ export default function Pieces()
           )
       }
       {
-        piecesFiltered.length === 0 && !isLoading && <Text>Aucune piece trouve </Text>
+        piecesFiltered.length === 0 && !isLoading && (
+          <View style={{ alignItems: "center" }}>
+            <Text>{currentLang === 'en' ? 'no administrative piece' : 'aucune piece trouve'}</Text>
+          </View>
+        )
       }
     </ScrollView>
     <AnimatedFAB
       color={Colors.light}
       icon={Icons.add}
-      label={'add new piece'}
+      label={currentLang === 'en' ? 'Add new Piece' : 'Ajouter une nouvelle piece'}
       extended={true}
       animateFrom={'right'}
       onPress={()=>{

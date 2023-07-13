@@ -8,6 +8,12 @@ const Icons = {
   menu: 'menu',
   add: 'plus',
   back: 'chevron-left',
+  SETTINGS: {
+    ARROWMENU: {
+      ACTIVE: 'chevron-down',
+      INACTIVE: 'chevron-right',
+    }
+  },
   MAIN: {
     TABS: {
       ASSISTANT: {

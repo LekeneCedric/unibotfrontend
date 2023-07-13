@@ -20,6 +20,7 @@ import colors from "../../../shared/theme/colors";
 import Simplebutton from "../../../shared/components/buttons/simplebutton";
 import { Picker } from "@react-native-picker/picker";
 import { filterRequest } from "../../../shared/utils/filterPeriod";
+import { useTranslation } from "react-i18next";
 
 type TypeRequest = {
   id?: number;
@@ -53,6 +54,8 @@ export default function Requests() {
     {id:6,title:'last year',value:'lastYear',isSelected:false},
     {id:7,title:'all time',value:'',isSelected:false},
   ]);
+  const {t, i18n} = useTranslation();
+  const currentLang = i18n.language;
   const filter = () => {
     setShowModal(false);
     console.warn(selectedPeriod)
@@ -160,6 +163,9 @@ export default function Requests() {
       });
   }, [reload]);
   useEffect(() => {
+    setRequestTemp(requests);
+  },[requests]);
+  useEffect(() => {
     setIsRequestLoad(true);
     GET(ROUTES.V1.USER.REQUEST.GET, token)
       .then(res => res.json())
@@ -180,14 +186,14 @@ export default function Requests() {
     <Portal>
       <Modal style={styles.filterModal} visible={showModal} onDismiss={()=>setShowModal(false)}>
         <ScrollView style={styles.filterModalContainer}>
-          <Text style={styles.filterModalContainerTitle}> Quels types de requetes </Text>
+          <Text style={styles.filterModalContainerTitle}> {currentLang === 'en' ? 'What type of query' : 'Quel type de requetes'} </Text>
           {
             isRequestLoad ?
               (
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
                   <ActivityIndicator size={widthPercentageToDP("8%")} color={Colors.primary}
                                      style={{ alignSelf: "center" }} />
-                  <Text>Chargement des types de requetes </Text>
+                  <Text>{currentLang === 'en' ? 'Loading requests types' : 'Chargement des types de requetes'} </Text>
                 </View>
               ) : (
                 <View style={{flexDirection: 'row',flexGrow: 1, flexWrap: 'wrap'}}>
@@ -206,7 +212,7 @@ export default function Requests() {
                 </View>
               )
           }
-          <Text style={styles.filterModalContainerTitle}> Pendant quelle periode ? </Text>
+          <Text style={styles.filterModalContainerTitle}> {currentLang === 'en' ? 'During what period ?' : 'Pendant quelle periode ? '} </Text>
           <View style={{flexDirection: 'row',flexGrow: 1, flexWrap: 'wrap'}}>
             {
               periodes.map((periode)=> {
@@ -221,12 +227,14 @@ export default function Requests() {
               })
             }
           </View>
-          <Simplebutton  text={'Valider le filtre'} func={filter} />
+          <Simplebutton  text={currentLang === 'en' ? 'Filter validation' : 'Validation filtre'} func={filter} />
         </ScrollView>
       </Modal>
     </Portal>
     <Searchbar
-      placeholder="Search"
+      placeholder={currentLang === 'en' ? 'Search' : 'Rechercher'}
+      placeholderTextColor={colors.gray}
+      iconColor={colors.gray}
       inputStyle={styles.searchBarInput}
       onChangeText={(searchText) => {
         setSearch(searchText);
@@ -249,7 +257,7 @@ export default function Requests() {
             <View style={{ alignItems: "center", justifyContent: "center" }}>
               <ActivityIndicator size={widthPercentageToDP("8%")} color={Colors.primary}
                                  style={{ alignSelf: "center" }} />
-              <Text>Chargement des requests </Text>
+              <Text>{currentLang === 'en' ? 'Loading requests' : 'Chargement des requetes'}</Text>
             </View>
           ) :
           (
@@ -270,7 +278,7 @@ export default function Requests() {
       {
         requests.length === 0 && !isRequestLoad && (
           <View style={{ alignItems: "center" }}>
-            <Text>Aucune requete trouve</Text>
+            <Text>{currentLang === 'en' ? 'No request found' : 'Aucune requete trouvee'}</Text>
           </View>
         )
       }
